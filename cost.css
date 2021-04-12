@@ -1,0 +1,90 @@
+
+
+.overskrift {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .1fr;
+    gap: -10px -10px;
+    grid-template-areas:
+      "\\\.\\\. \\\. \\\. \\\. \\\. \\\. \\\. \\\. \\\. \\\. \\\. \\\. .";
+  }
+  
+  .\\\.\\\. { grid-area: \\\.\\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .\\\. { grid-area: \\\.; }
+  
+  .land {
+      width: 20px;
+      font-size: 12px;
+    font-style: italic;
+  }
+
+  .mexi {
+      margin-left: -5px;
+  }
+
+  .miami {
+      margin-left: -15px;
+  }
+
+  .moscow {
+      margin-left: -30px;
+  }
+  
+  .new {
+      margin-left: -40px;
+  }
+
+  .paris {
+
+margin-left: -50px;
+  }
+
+  .prague {
+      margin-left: -65px;
+  }
+
+  .rio { 
+      margin-left: -85px;
+  }
+
+  .stock {
+      margin-left: -110px;
+  }
+
+  .sydney {
+      margin-left: -120px;
+  }
+
+  .tokyo {
+      margin-left: -130px;
+  }
+
+  .zurich {
+      margin-left: -140px;
+  }
+

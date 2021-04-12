@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <title>Prisen for en gennemsnitlig bytur</title>
+  <script type="text/javascript" src="d3.js"></script>
+  <link rel="stylesheet" href="cost.css">
+
+</head>
+
+<body>
+
+  
+<a href="drink.html">Drink</a>
+<h1 class="overskriftto">Entrépriser</h1>
+  <script type="text/javascript">
+    // Width og height
+    const w = 1000;
+    const h = 500;
+    const barPadding = 2;
+
+    const dataset = [
+24.67,25.55,3.22,40.0,1.32,25.0,14.8,19.44,14.76,27.14,19.66,18.58,26.5,];
+
+    // Scale-funktion til y-aksen
+    const yScale = d3.scaleLinear() // Linæer skalering
+      .domain([0, d3.max(dataset)]) // Input er fra 0 til største værdi i dataset
+      .range([0, h]) // Ouput er fra 0 til højden af SVG
+
+    // Lav SVG element
+    const svg = d3.select("body")
+      .append("svg")
+      .attr("width", w)
+      .attr("height", h);
+
+    // Lav bars
+    svg.selectAll("rect")
+      .data(dataset)
+      .enter()
+      .append("rect")
+      .attr("x", function (d, i) {
+        return i * (w / dataset.length);
+      })
+      .attr("y", function (d) {
+        return h - yScale(d);
+      })
+      .attr("width", w / dataset.length - barPadding)
+      .attr("height", function (d) {
+        return yScale(d);
+      })
+      .attr("fill", "grey");
+
+    // Smide labels på
+    svg.selectAll("text")
+      .data(dataset)
+      .enter()
+      .append("text")
+      .text(function(d) {
+        return d;
+      })
+      .attr("x", function(d, i) {
+        return i * (w / dataset.length) + 5;
+      })
+      .attr("y", function(d) {
+        return h - yScale(d) + 15;
+      })
+      .attr("font-family", "sans-serif")
+      .attr("font-size", "15px")
+      .attr("fill", "white");
+      
+  </script>
+
+<div class="grid-container">
+  <div class="\\\\\\. land">Barcelona</div>
+  <div class="\\\. land">Hong Kong</div>
+  <div class="\\\. land mexi">Mexico</div>
+  <div class="\\\. land miami">Miami</div>
+  <div class="\\\. land moscow">Moscow</div>
+  <div class="\\\. land new">New York</div>
+  <div class="\\\. land paris">Paris</div>
+  <div class="\\\. land prague">Prague</div>
+  <div class="\\\. land rio">Rio de Janeiro</div>
+  <div class="\\\. land stock">Stockholm</div>
+  <div class="\\\. land sydney">Sydney</div>
+  <div class="\\\. land tokyo">Tokyo</div>
+  <div class="\\\. land zurich">Zurich</div>
+</div>
+
+
+</body>
+
+
+</html>
